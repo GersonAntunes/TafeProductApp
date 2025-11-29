@@ -35,9 +35,15 @@ namespace ProductApps
                 cProduct.calTotalPayment();
                 totalPaymentTextBlock.Text = Convert.ToString(cProduct.TotalPayment);
 
-                decimal totalCharge = cProduct.TotalPayment + 25.00m;
+                decimal deliveryCharge = 25.00m;
+                decimal wrapCharge = 5.00m;
 
+                decimal totalCharge = cProduct.TotalPayment + deliveryCharge;
                 totalChargeTextBlock.Text = totalCharge.ToString("0.00");
+
+
+                decimal totalChargeWrap = totalCharge + wrapCharge;
+                totalChargeWrapTextBlock.Text = totalChargeWrap.ToString("0.00");
 
 
             }
@@ -54,6 +60,7 @@ namespace ProductApps
             quantityTextBox.Text = "";
             totalPaymentTextBlock.Text = "";
             totalChargeTextBlock.Text = "";
+            totalChargeWrapTextBlock.Text = "";
         }
 
         private void closeButton_Click(object sender, RoutedEventArgs e)
