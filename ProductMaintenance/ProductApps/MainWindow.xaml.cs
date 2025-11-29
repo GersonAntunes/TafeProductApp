@@ -37,6 +37,7 @@ namespace ProductApps
 
                 decimal deliveryCharge = 25.00m;
                 decimal wrapCharge = 5.00m;
+                decimal gstRate = 0.10m;
 
                 decimal totalCharge = cProduct.TotalPayment + deliveryCharge;
                 totalChargeTextBlock.Text = totalCharge.ToString("0.00");
@@ -44,6 +45,9 @@ namespace ProductApps
 
                 decimal totalChargeWrap = totalCharge + wrapCharge;
                 totalChargeWrapTextBlock.Text = totalChargeWrap.ToString("0.00");
+
+                decimal totalAfterGST = totalChargeWrap * (1 + gstRate);
+                totalChargeGSTTextBlock.Text = totalAfterGST.ToString("0.00");
 
 
             }
